@@ -1,3 +1,4 @@
+/rabbit-mq-producer.iml
 /.classpath
 /.gradle/
 /.project
@@ -5,4 +6,3 @@
 /bin/
 /build/
 .idea/
-rabbit-mq-producer.iml
