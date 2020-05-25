@@ -1,0 +1,43 @@
+server:
+   port: 8081
+   servlet:
+      context-path: '/rabbit-producer'
+spring:
+  rabbitmq:
+    host: 'localhost'
+    port: 5672                                                
+    username: poc
+    password: poc
+    virtual-host: poc
+application:
+  fifa:
+    exchange: 'fifa.update.exchange'
+    dlq-exchange: 'fifa.dlq.exchange'
+    espn-queue: 'espn.channel.fifa.update.queue'
+    star-queue: 'star.channel.fifa.update.queue'
+    espn-failure-queue: 'espn.channel.fifa.update.failure.queue'
+    star-failure-queue: 'star.channel.fifa.update.failure.queue'
+    espn-failure-withdlq-queue: 'espn.channel.fifa.update.failure.withdlq.queue'
+    espn-failure-dlq: 'espn.channel.fifa.update.dlq'
+    star-failure-withdlqttl-queue: 'star.channel.fifa.update.failure.withdlqttl.queue'
+    star-failure-dlq: 'star.channel.fifa.update.dlq'
+  tvshow:
+    exchange: 'tvshow.telecast.exchange'
+    star-queue: 'tvshow.telecast.star.queue'
+    sony-queue: 'tvshow.telecast.sony.queue'   
+  image:
+    upload:
+      exchange: 'image.upload.exchange'
+    operation:
+      queue: 'image.operation.queue' 
+    compression:
+      exchange: 'image.compression.exchange' 
+      queue: 'image.compression.queue' 
+    delay:
+      exchange: 'image.delay.exchange' 
+  notification:
+    exchange: 'fifa.match.notification.exchange'
+    slack-queue: 'fifa.publish.notification.slack'
+    hangout-queue: 'fifa.publish.notification.hangout'
+    all-queue: 'fifa.publish.notification.all.match'
+    any-queue: 'fifa.publish.notification.any.match'        
